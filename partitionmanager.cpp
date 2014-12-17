@@ -2624,7 +2624,7 @@ int TWPartitionManager::Partition_SDCard(void) {
 	else if (sdcard_fs == "exfat") {
 		Command = "parted -s " + Device + " mkpart primary 0 " + sdcard_end + "MB";
 		LOGINFO("Command is: '%s'\n", Command.c_str());
-		TWFunc::Exec_Cmd(Command, result);
+		TWFunc::Exec_Cmd(Command);
 		Command = "mkexfatfs " + SDCard->Actual_Block_Device;
 		LOGINFO("Command is: '%s'\n", Command.c_str());
 		TWFunc::Exec_Cmd(Command);
